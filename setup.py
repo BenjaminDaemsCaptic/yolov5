@@ -1,10 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="YOLOv5",
+    name="benjamin",
     version="7.0.0",
     author="Glenn Jocher, Ayush Chaurasia, Jing Qiu",
-    author_email="contact@ultralytics.com",  # Update with a valid email address
     description="Ultralytics YOLOv5 for SOTA object detection, instance segmentation and image classification.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
