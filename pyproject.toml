@@ -158,7 +158,6 @@ authors = [
 license = { "text" = "AGPL-3.0" }
 
 [tool.poetry.dependencies]
-python = "^3.8"  # Example, adjust based on your compatibility needs
 numpy = "^1.22.2"
 opencv-python = "^4.6.0"
 pillow = "^7.1.2"
