@@ -25,7 +25,7 @@ build-backend = "setuptools.build_meta"
 # Project settings -----------------------------------------------------------------------------------------------------
 [project]
 version = "7.0.0"
-name = "benjamin"
+name = "yolov5"
 description = "Ultralytics YOLOv5 for SOTA object detection, instance segmentation and image classification."
 readme = "README.md"
 requires-python = ">=3.8"
@@ -147,20 +147,18 @@ ignore-words-list = "crate,nd,strack,dota,ane,segway,fo,gool,winn,commend"
 skip = '*.csv,*venv*,docs/??/,docs/mkdocs_??.yml'
 
 [tool.poetry]
-name = "benjamin"
+name = "yolov5"
 version = "7.0.0"
 description = "Ultralytics YOLOv5 for SOTA object detection, instance segmentation and image classification."
 authors = [
-    { name = "Glenn Jocher" },
-    { name = "Ayush Chaurasia" },
-    { name = "Jing Qiu" }
+    "Glenn Jocher", "Ayush Chaurasia", "Jing Qiu" 
 ]
-license = { "text" = "AGPL-3.0" }
+license = "AGPL-3.0"
 
 [tool.poetry.dependencies]
+python = "^3.8"
 numpy = "^1.22.2"
 opencv-python = "^4.6.0"
-pillow = "^7.1.2"
 pyyaml = "^5.3.1"
 requests = "^2.23.0"
 scipy = "^1.4.1"
