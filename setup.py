@@ -55,21 +55,9 @@ setup(
         "ultralytics>=8.0.232"
     ],
     extras_require={
-        "dev": [
-            "ipython",
-            "check-manifest",
-            "pre-commit",
-            "pytest",
-            "pytest-cov",
-            "coverage[toml]",
-            "mkdocs-material",
-            "mkdocstrings[python]",
-            "mkdocs-redirects",
-            "mkdocs-ultralytics-plugin>=0.0.34",
-        ],
         "export": [
             "onnx>=1.12.0",
-            "coremltools>=7.0; platform_system != 'Windows'",
+            "coremltools>=7.0",
             "openvino-dev>=2023.0",
             "tensorflow<=2.13.1",
             "tensorflowjs>=3.9.0",
