@@ -78,7 +78,7 @@ GIT_INFO = check_git_info()
 def train(opt, device):
     """Trains a YOLOv5 model, managing datasets, model optimization, logging, and saving checkpoints."""
     init_seeds(opt.seed + 1 + RANK, deterministic=True)
-    save_dir, data, bs, epochs, nw, imgsz, pretrained = (
+    save_dir, data, bs, epochs, nw, imgsz, pretrained, augment = (
         opt.save_dir,
         Path(opt.data),
         opt.batch_size,
@@ -86,6 +86,7 @@ def train(opt, device):
         min(os.cpu_count() - 1, opt.workers),
         opt.imgsz,
         str(opt.pretrained).lower() == "true",
+        str(opt.augment).lower() == "true",
     )
     cuda = device.type != "cpu"
 
@@ -120,7 +121,7 @@ def train(opt, device):
         path=data_dir / "train",
         imgsz=imgsz,
         batch_size=bs // WORLD_SIZE,
-        augment=True,
+        augment=augment,
         cache=opt.cache,
         rank=LOCAL_RANK,
         workers=nw,
@@ -333,6 +334,7 @@ def parse_opt(known=False):
     parser.add_argument("--verbose", action="store_true", help="Verbose mode")
     parser.add_argument("--seed", type=int, default=0, help="Global training seed")
     parser.add_argument("--local_rank", type=int, default=-1, help="Automatic DDP Multi-GPU argument, do not modify")
+    parser.add_argument("--augment", type=bool, nargs='?', default=False, help="Enables image augmentation")
     return parser.parse_known_args()[0] if known else parser.parse_args()
 
 
