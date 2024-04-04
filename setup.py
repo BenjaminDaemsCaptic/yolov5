@@ -51,7 +51,7 @@ setup(
         "thop>=0.1.1",
         "pandas>=1.1.4",
         "seaborn>=0.11.0",
-        "ultralytics>=8.0.232"
+        "ultralytics>=8.0.232",
     ],
     extras_require={
         "export": [
