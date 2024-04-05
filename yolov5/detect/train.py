@@ -61,7 +61,6 @@ from utils.general import (
     check_git_info,
     check_git_status,
     check_img_size,
-    check_requirements,
     check_suffix,
     check_yaml,
     colorstr,
@@ -821,7 +820,6 @@ def main(opt, callbacks=Callbacks()):
     if RANK in {-1, 0}:
         print_args(vars(opt))
         check_git_status()
-        check_requirements(ROOT / "requirements.txt")
 
     # Resume (from specified or most recent last.pt)
     if opt.resume and not check_comet_resume(opt) and not opt.evolve:

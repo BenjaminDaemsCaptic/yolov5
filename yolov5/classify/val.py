@@ -231,8 +231,7 @@ def parse_opt():
 
 
 def main(opt):
-    """Executes the YOLOv5 model prediction workflow, handling argument parsing and requirement checks."""
-    check_requirements(ROOT / "requirements.txt", exclude=("tensorboard", "thop"))
+    """Executes the YOLOv5 model prediction workflow, handling argument parsing."""
     run(**vars(opt))
 
 

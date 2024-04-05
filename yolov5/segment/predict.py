@@ -58,7 +58,6 @@ from utils.general import (
     check_file,
     check_img_size,
     check_imshow,
-    check_requirements,
     colorstr,
     cv2,
     increment_path,
@@ -442,8 +441,7 @@ def parse_opt():
 
 
 def main(opt):
-    """Executes YOLOv5 model inference with given options, checking for requirements before launching."""
-    check_requirements(ROOT / "requirements.txt", exclude=("tensorboard", "thop"))
+    """Executes YOLOv5 model inference with given options."""
     run(**vars(opt))
 
 
